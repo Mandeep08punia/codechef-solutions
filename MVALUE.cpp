@@ -1,4 +1,4 @@
-/*Author:mp04*/
+
 //Link:https://www.codechef.com/problems/MVALUE
 #include <bits/stdc++.h>
 using namespace std;
