@@ -1,4 +1,4 @@
-/*Author:mp04*/
+
 //Link:https://www.codechef.com/problems/TOTSCR
 #include <bits/stdc++.h>
 using namespace std;
@@ -30,30 +30,6 @@ typedef tree<pair<int, int>, null_type, less<pair<int, int>>, rb_tree_tag, tree_
   cin.tie(NULL);                    \
   cout.tie(NULL)
 
-void sieve(int n)
-{
-  vector<int> v;
-  bitset<1000000> b;
-  b.set();
-  b[0] = b[1] = 0;
-
-  for (int i = 2; i <= n; i++)
-  {
-    if (b[i] == 1)
-    {
-      v.pb(i);
-      for (int j = i * i; j <= n; j += i)
-      {
-        b[j] = 0;
-      }
-    }
-  }
-  for (int i = 0; i < v.size(); i++)
-  {
-    cout << v[i] << " ";
-  }
-  cout << endl;
-}
 void solve()
 {
   int n, k;
@@ -61,9 +37,9 @@ void solve()
   int a[k], i;
   string s;
   long long score = 0;
-  for (int i = 0; i < k; i++)
+  rep(i,k)
     cin >> a[i];
-  for (int i = 0; i < n; i++) {
+  rep(i,n) {
     cin >> s;
     score = 0;
     for (int i = 0; i < s.length(); i++) {
@@ -84,7 +60,7 @@ int main()
   FASTIO;
   int t ;
   cin >> t;
-  while (t--)
+  w (t)
   {
     solve();
   }
