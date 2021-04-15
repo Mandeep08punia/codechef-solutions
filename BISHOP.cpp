@@ -1,4 +1,3 @@
-/*Author:mp04*/
 //Link:https://www.codechef.com/problems/BISHOP
 #include <bits/stdc++.h>
 using namespace std;
@@ -24,38 +23,15 @@ const ll INF = 2e18;
   cin.tie(NULL);                    \
   cout.tie(NULL)
 
-void sieve(int n)
-{
-  vector<int> v;
-  bitset<1000000> b;
-  b.set();
-  b[0] = b[1] = 0;
 
-  for (int i = 2; i <= n; i++)
-  {
-    if (b[i] == 1)
-    {
-      v.pb(i);
-      for (int j = i * i; j <= n; j += i)
-      {
-        b[j] = 0;
-      }
-    }
-  }
-  for (int i = 0; i < v.size(); i++)
-  {
-    cout << v[i] << " ";
-  }
-  cout << endl;
-}
 void solve()
 {
   int n;
   cin >> n;
   int xi, yi;
-  long long ans = 0;
+  ll ans = 0;
   unordered_map<int, int> mp1, mp2;
-  for (int i = 0; i < n; i++) {
+  rep(i,n) {
     cin >> xi >> yi;
     mp1[xi + yi]++;
     mp2[xi - yi]++;
