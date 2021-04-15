@@ -1,4 +1,4 @@
-/*Author:mp04*/
+
 //Link:https://www.codechef.com/CCHI2021/problems/CCBTS03
 #include <bits/stdc++.h>
 using namespace std;
@@ -29,37 +29,13 @@ typedef tree<pair<int, int>, null_type, less<pair<int, int>>, rb_tree_tag, tree_
   cin.tie(NULL);                    \
   cout.tie(NULL)
 
-void sieve(int n)
-{
-  vector<int> v;
-  bitset<1000000> b;
-  b.set();
-  b[0] = b[1] = 0;
-
-  for (int i = 2; i <= n; i++)
-  {
-    if (b[i] == 1)
-    {
-      v.pb(i);
-      for (int j = i * i; j <= n; j += i)
-      {
-        b[j] = 0;
-      }
-    }
-  }
-  for (int i = 0; i < v.size(); i++)
-  {
-    cout << v[i] << " ";
-  }
-  cout << endl;
-}
 
 void solve()
 {
   int n, k;
   cin >> n >> k;
   int a[n], mini, maxi, diff;
-  for (int i = 0; i < n; i++)
+  rep(i,n)
     cin >> a[i];
   sort(a, a + n);
   mini = a[0];
@@ -82,7 +58,7 @@ int main()
   FASTIO;
   int t  ;
   cin >> t;
-  while (t--)
+  w (t)
   {
     solve();
   }
