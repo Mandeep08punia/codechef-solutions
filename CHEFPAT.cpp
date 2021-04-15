@@ -1,4 +1,4 @@
-/*Author:mp04*/
+
 //Link:https://www.codechef.com/problems/CHEFPAT
 #include <bits/stdc++.h>
 using namespace std;
@@ -30,30 +30,6 @@ typedef tree<pair<int, int>, null_type, less<pair<int, int>>, rb_tree_tag, tree_
   cin.tie(NULL);                    \
   cout.tie(NULL)
 
-void sieve(int n)
-{
-  vector<int> v;
-  bitset<1000000> b;
-  b.set();
-  b[0] = b[1] = 0;
-
-  for (int i = 2; i <= n; i++)
-  {
-    if (b[i] == 1)
-    {
-      v.pb(i);
-      for (int j = i * i; j <= n; j += i)
-      {
-        b[j] = 0;
-      }
-    }
-  }
-  for (int i = 0; i < v.size(); i++)
-  {
-    cout << v[i] << " ";
-  }
-  cout << endl;
-}
 bool compare(pair<int, int> a, pair<int, int> b) {
   if (a.first > b.first)
     return true;
@@ -69,17 +45,17 @@ void solve()
   cin >> n ;
   pair<int, int> a[n], ar[n];
 
-  for (int i = 0; i < n; i++)
+  rep(i,n)
   {
     cin >> a[i].first;
     a[i].second = i;
     ar[i].first = a[i].first;
   }
   sort(a, a + n, compare);
-  for (int i = 0; i < n; i++) {
+  rep(i,n) {
     ar[a[i].second].second = i + 1;
   }
-  for (int i = 0; i < n; i++) {
+  rep(i,n) {
     cout << ar[i].second << " ";
   }
   cout << '\n';
@@ -94,7 +70,7 @@ int main()
   FASTIO;
   int t ;
   cin >> t;
-  while (t--)
+  w(t)
   {
     solve();
   }
