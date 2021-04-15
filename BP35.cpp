@@ -30,43 +30,18 @@ typedef tree<pair<int, int>, null_type, less<pair<int, int>>, rb_tree_tag, tree_
   cin.tie(NULL);                    \
   cout.tie(NULL)
 
-void sieve(int n)
-{
-  vector<int> v;
-  bitset<1000000> b;
-  b.set();
-  b[0] = b[1] = 0;
-
-  for (int i = 2; i <= n; i++)
-  {
-    if (b[i] == 1)
-    {
-      v.pb(i);
-      for (int j = i * i; j <= n; j += i)
-      {
-        b[j] = 0;
-      }
-    }
-  }
-  for (int i = 0; i < v.size(); i++)
-  {
-    cout << v[i] << " ";
-  }
-  cout << endl;
-}
-
 void solve()
 {
   int a, x, y, z;
   cin >> a >> x >> y >> z;
   int b[x], c[y], d[z];
-  for (int i = 0; i < x; i++)
+  rep(i,x)
     cin >> b[i];
-  for (int i = 0; i < y; i++)
+  rep(i,y)
     cin >> c[i];
-  for (int i = 0; i < z; i++) {
+  rep(i,z)
     cin >> d[i];
-  }
+
   sort(b, b + x);
   sort(c, c + y);
   sort(d, d + z);
@@ -76,7 +51,7 @@ void solve()
   }
   vector<int> v;
   int mini = INT_MAX, amount;
-  for (int i = 0; i < x; i++) {
+  rep(i,x) {
     for (int j = 0; j < y; j++) {
       amount = a - b[i] - c[j];
       if (amount > 0) {
@@ -95,7 +70,7 @@ void solve()
       }
     }
   }
-  for (int i = 0; i < v.size(); i++) {
+  rep(i,v.size()) {
     mini = min(mini, v[i]);
   }
   cout << mini << '\n';
