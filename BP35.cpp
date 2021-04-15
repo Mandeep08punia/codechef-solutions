@@ -1,4 +1,3 @@
-/*Author:mp04*/
 //Link:https://www.codechef.com/CWRS2021/problems/BP35
 #include <bits/stdc++.h>
 using namespace std;
