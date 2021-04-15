@@ -34,11 +34,11 @@ void solve()
 {
   int n, m, x, y;
   cin >> n;
-  long long a[n];
-  for (int i = 0; i < n; i++)
+  ll a[n];
+  rep(i,n)
     cin >> a[i];
   sort(a, a + n);
-  long long ans = LLONG_MIN;
+  ll ans = LLONG_MIN;
   ans = max(ans, (a[n - 2] + 1) * (a[n - 1] - 1) + 1);
   ans = max(ans, (a[0] + 1) * (a[1] - 1) + 1);
   cout << ans << '\n';
@@ -54,7 +54,7 @@ int main()
   //sieve(1000005);
   int t ;
   cin >> t;
-  while (t--)
+  w(t)
   {
     solve();
   }
