@@ -26,11 +26,11 @@ const ll INF = 2e18;
 
 void solve()
 {
-  int n;
+  ll n;
   cin >> n;
-  int xi, yi;
+  ll xi, yi;
   ll ans = 0;
-  unordered_map<int, int> mp1, mp2;
+  unordered_map<ll, ll> mp1, mp2;
   rep(i,n) {
     cin >> xi >> yi;
     mp1[xi + yi]++;
